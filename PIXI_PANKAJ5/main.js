@@ -39,7 +39,8 @@ function preload(e) {
       document.getElementById("bar").style.display = "none"; 
       document.getElementById("lo").style.display = "none";     
       document.getElementById("progress").style.display = "none";  
-      document.getElementById("but").style.display="";             
+      document.getElementById("but").style.display="";  
+
     }, 2000);
   }
   
@@ -93,6 +94,7 @@ front2.on('mousedown', (event) => {
         font.buttonMode = true;
         font.on('pointerdown', function () {
             font.scale.y *= 1.25;
+            font.scale.x *= 1.25;
         });
         game.stage.addChild(font);
 }
