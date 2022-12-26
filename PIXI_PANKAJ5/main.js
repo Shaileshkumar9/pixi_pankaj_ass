@@ -49,11 +49,6 @@ function startgame()
 {
   console.log("clicked");
   document.getElementById("loader").style.display = "none";
-  // setTimeout(() => {
-      
-  //   document.getElementById("loader").style.display = "";
-  //     }, 3000);
-
 
 }
 
