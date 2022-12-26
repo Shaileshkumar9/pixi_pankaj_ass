@@ -8,7 +8,6 @@ loadAssets([
   { name: "back", url:"assets/close.png" },
   { name: "front", url: "assets/menu.jpg" },
 ], start);
-
 //------------------------------
 const pBar = document.getElementById("bar");
 const pText = document.getElementById("progress");
@@ -66,19 +65,7 @@ function loadAssets(list, onLoadComplete) {
 }
 //----------------------------------
 function start(loader, resources) {
-    //console.log('params ', arguments);
-  //  const back = PIXI.Sprite.from(resources['back'].texture);
-   // back.scale.set(0.2);
-   // game.stage.addChild(back);
-    const smily = new PIXI.Texture(resources['front'].texture);
-    //new PIXI.Rectangle(0,0,150,150));
-    const front = PIXI.Sprite.from(smily);
-     front.scale.set(1.8);
-     front.x=150;
-     front.width=900;
-     front.height=500;
-    front.y=20;
-    game.stage.addChild(front);
+ 
 
 
     const smily2 = new PIXI.Texture(resources['back'].texture);
@@ -99,21 +86,18 @@ front2.on('mousedown', (event) => {
 });
 
     
-   //var sprite = PIXI.Sprite.fromImage('');
-  // sprite.position.x = 100;
-  // sprite.position.y = 100;
-  // stage.addChi
+ 
+   const font = new PIXI.Text('Text Button!');
+        font.anchor.set(0.5);
+       // font.position.set(renderer.screen.width / 2, renderer.screen.height / 2);
+        font.interactive = true;
       
-    var text = new PIXI.Text('menu',
-    {
-      font : '50px Arial',
-      fill : 0xFFFFFF,
-      align : 'center',
-    });
-    text.scale.set(1.5);
-    
-    text.x=500;
-    text.y=100;
-
-    game.stage.addChild(text);
+        font.x=400;
+        font.y=62;
+        
+        font.buttonMode = true;
+        font.on('pointerdown', function () {
+            font.scale.y *= 1.25;
+        });
+        game.stage.addChild(font);
 }
